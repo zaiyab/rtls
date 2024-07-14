@@ -35,15 +35,15 @@ app.post('/json', (req, res) => {
        if (item.type === 'iBeacon') {
         if(a==='Router A'){
             r1=parseInt(item.rssi, 10)
-            console.log("R1",r1)
+          //  console.log("R1",r1)
         }else if(a==='Router D'){
             r2=parseInt(item.rssi, 10)
-            console.log("R2",r2)
+          //  console.log("R2",r2)
         }else if(a==='Router C'){
             r3=parseInt(item.rssi, 10)
-            console.log("R3",r3)
+          //  console.log("R3",r3)
         }
-           console.log(a , item.rssi,'\n');
+          // console.log(a , item.rssi,'\n');
         }
        
         if (r1 > r2 && r1 > r3) {
