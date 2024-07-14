@@ -54,7 +54,7 @@ app.post('/json', (req, res) => {
         } else if (r3 > r1 && r3 > r2) {
             console.log("Device is in room C");
         }
-        console.log(r1,r2,r3)
+       // console.log(r1,r2,r3)
        
     });}
     res.send(`
