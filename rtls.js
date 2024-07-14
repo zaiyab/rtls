@@ -21,36 +21,35 @@ app.post('/json', (req, res) => {
          //  console.log("Router A "+item.mac );
         }
            else if(item.mac==='AC233FC006B0'){
-            a = "Router C"+item.mac
+            a = "Router C"
           //  console.log("Router C "+item.mac);
         }
         else if(item.mac==='AC233FC006C1'){
-            a = "Router D"+item.mac
+            a = "Router D"
           //  console.log("Router D "+item.mac);
         }
         }
        if (item.type === 'iBeacon') {
         if(a==='Router A'){
-            r1=item.rssi
-            console.log("RA")
+            r1=parseInt(item.rssi, 10)
+            console.log("RA"+r1)
         }else if(a==='Router D'){
-            r2=item.rssi
-            console.log("RD")
+            r2=parseInt(item.rssi, 10)
+            console.log("RD"+r2)
         }else if(a==='Router C'){
-            r3=item.rssi
-            console.log("RC")
+            r3=parseInt(item.rssi, 10)
+            console.log("RC"+r3)
         }
-           //console.log(a , item.rssi,'\n');
+           console.log(a , item.rssi,'\n');
         }
-        if(r1>r2 && r1>r3){
-            console.log("device is in room A")
+        if (r1 > r2 && r1 > r3) {
+            console.log("Device is in room A");
+        } else if (r2 > r1 && r2 > r3) {
+            console.log("Device is in room D");
+        } else if (r3 > r1 && r3 > r2) {
+            console.log("Device is in room C");
         }
-        else if(r2>r1 && r2>r3){
-            console.log("device is in room B")
-        }
-        else if(r3>r1 && r3>r2){
-            console.log("device is in room C")
-        }
+        
        
     });}
     res.send(`
