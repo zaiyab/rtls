@@ -5,13 +5,16 @@ const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-
+let a ='';
+let r1 = 0
+let r2= 0
+let r3 = 0
 // Route to accept POST requests and display the received JSON
 app.post('/json', (req, res) => {
     const receivedJson = req.body;
    // console.log(req.body)
-   let a ='';
-   let r1,r2,r3
+
+
     if (Array.isArray(receivedJson)) {
     receivedJson.forEach(item => {
         
@@ -32,24 +35,26 @@ app.post('/json', (req, res) => {
        if (item.type === 'iBeacon') {
         if(a==='Router A'){
             r1=parseInt(item.rssi, 10)
-            console.log("RA"+r1)
+            console.log("R1",r1)
         }else if(a==='Router D'){
             r2=parseInt(item.rssi, 10)
-            console.log("RD"+r2)
+            console.log("R2",r2)
         }else if(a==='Router C'){
             r3=parseInt(item.rssi, 10)
-            console.log("RC"+r3)
+            console.log("R3",r3)
         }
            console.log(a , item.rssi,'\n');
         }
+       
         if (r1 > r2 && r1 > r3) {
             console.log("Device is in room A");
+        
         } else if (r2 > r1 && r2 > r3) {
             console.log("Device is in room D");
         } else if (r3 > r1 && r3 > r2) {
             console.log("Device is in room C");
         }
-        
+        console.log(r1,r2,r3)
        
     });}
     res.send(`
