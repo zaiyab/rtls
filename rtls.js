@@ -40,6 +40,16 @@ app.post('/json', (req, res) => {
             a = "Router D"
             //  console.log("Router D "+item.mac);
           }
+          else if (item.mac === 'AC233FC00717') {
+            a = "Router E"
+            //  console.log("Router E "+item.mac);
+          }
+          else if (item.mac === 'AC233FC006CE') {
+            a = "Router F"
+            //  console.log("Router F "+item.mac);
+          }
+
+          ///G is not working correctly/////////////////////////////////////////////////////////////////////////////////////////
         }
 
 
@@ -62,9 +72,9 @@ app.post('/json', (req, res) => {
           else if (a === 'Router F') {
             r6 = parseInt(item.rssi, 10)
           }
-          else if (a === 'Router G') {
-            r7 = parseInt(item.rssi, 10)
-          }
+        //  else if (a === 'Router G') {
+        //    r7 = parseInt(item.rssi, 10)
+       //   }
           // console.log(a , item.rssi,'\n');
         }
        // console.log(r2)
@@ -82,10 +92,10 @@ app.post('/json', (req, res) => {
           console.log("Device is in room E");
         } else if (r6 > r1 && r6 > r2 && r6 > r3 && r6 > r4 && r6 > r5 && r6 > r7 && r6 !== 0) {
           console.log("Device is in room F");
-        } else if (r7 > r1 && r7 > r2 && r7 > r3 && r7 > r4 && r7 > r5 && r7 > r6 && r7 !== 0) {
-          console.log("Device is in room G");
-        }
-          console.log(r1,r2,r3)
+        } //else if (r7 > r1 && r7 > r2 && r7 > r3 && r7 > r4 && r7 > r5 && r7 > r6 && r7 !== 0) {
+         // console.log("Device is in room G");
+       // }
+          console.log(r1,r2,r3,r4,r5,r6,r7)
 
       });}
   res.send(`
