@@ -27,7 +27,7 @@ app.post('/json', (req, res) => {
           a = "Router A"
            console.log("Router A "+item.mac );
         }
-        if (item.type === 'Gateway') {
+      
           if (item.mac === 'AC233FC006E7') {
             a = "Router B"
              console.log("Router B "+item.mac );
@@ -87,8 +87,7 @@ app.post('/json', (req, res) => {
         }
           console.log(r1,r2,r3)
 
-      }});
-  }
+      });}
   res.send(`
         <html>
             <body>
