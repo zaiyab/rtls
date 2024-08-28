@@ -1,0 +1,23 @@
+router c 30549937 
+admin 12345678
+
+router a 12345678
+admin null
+
+router b 30549937
+admin null
+
+router d 30549937
+admin 12345678
+
+
+router e 30549937
+admin null
+
+
+router f 30549937
+admin null
+
+router g 30549937
+admin null
+

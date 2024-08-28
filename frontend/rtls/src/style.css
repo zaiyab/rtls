@@ -1,0 +1,22 @@
+/* Rectangle.css */
+.rectangle {
+    width: 250px;
+    height: 200px;
+    margin: 20px;
+    transition: transform 0.3s; /* Smooth resize on responsive change */
+  }
+  
+  @media (max-width: 768px) {
+    .rectangle {
+      width: 80px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rectangle {
+      width: 60px;
+      height: 30px;
+    }
+  }
+  
