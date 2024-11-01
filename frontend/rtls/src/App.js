@@ -13,7 +13,7 @@ function App() {
     // Function to call the API
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/endpoint"); // Adjust the endpoint as per your API
+        const response = await axios.get("http://192.168.1.113:3000/api/endpoint"); // Adjust the endpoint as per your API
         setData(response.data);
         // console.log(response)
         // console.log("hell")
